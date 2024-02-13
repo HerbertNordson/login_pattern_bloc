@@ -20,14 +20,9 @@ class _HomeState extends State<Home> {
   final TextEditingController _controlPassword = TextEditingController();
 
   bool login(List<User> users) {
-    for (var i = 0; i < users.length; i++) {
-      if (users[i].email == _controlEmail.text &&
-          users[i].password == _controlPassword.text) {
-        return true;
-      }
-    }
-
-    return false;
+    return users.any((User user) =>
+        user.email == _controlEmail.text &&
+        user.password == _controlPassword.text);
   }
 
   void handleLogin(List<User> users) {
