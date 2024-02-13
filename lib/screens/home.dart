@@ -19,14 +19,8 @@ class _HomeState extends State<Home> {
   final TextEditingController _controlEmail = TextEditingController();
   final TextEditingController _controlPassword = TextEditingController();
 
-  bool login(List<User> users) {
-    return users.any((User user) =>
-        user.email == _controlEmail.text &&
-        user.password == _controlPassword.text);
-  }
-
   void handleLogin(List<User> users) {
-    login(users)
+    User.login(users, _controlEmail.text, _controlPassword.text)
         ? Navigator.push(
             context,
             MaterialPageRoute(
