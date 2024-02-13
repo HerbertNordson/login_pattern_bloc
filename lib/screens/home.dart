@@ -112,6 +112,7 @@ class _HomeState extends State<Home> {
                                   value, true)) {
                                 return "Insira um e-mail válido";
                               }
+                              return null;
                             },
                           ),
                         ),
@@ -128,6 +129,7 @@ class _HomeState extends State<Home> {
                               } else if (value.length < 6) {
                                 return "Insira uma senha com 6 carqcteres ou mais";
                               }
+                              return null;
                             },
                           ),
                         ),
